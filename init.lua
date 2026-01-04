@@ -104,6 +104,11 @@ vim.o.number = true
 --  Experiment for yourself to see if you like it!
 -- vim.o.relativenumber = true
 
+vim.o.tabstop = 4 -- Width of a tab character
+vim.o.shiftwidth = 4 -- Number of spaces for auto-indent
+vim.o.softtabstop = 4 -- Number of spaces for <Tab> key
+vim.o.expandtab = true -- Convert tabs to spaces
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
 
@@ -914,7 +919,7 @@ require('lazy').setup({
         italic = {
           comments = false,
         },
-        -- contrast = 'hard', -- can be "hard", "soft" or empty string for default
+        contrast = 'hard', -- can be "hard", "soft" or empty string for default
       }
       vim.cmd.colorscheme 'gruvbox'
     end,
