@@ -182,6 +182,16 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'TermEnter', 'CursorHold' }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ 'InsertLeave', 'FocusLost' }, {
+  desc = 'Auto-save modified buffers',
+  group = vim.api.nvim_create_augroup('auto-save', { clear = true }),
+  callback = function()
+    if vim.bo.modified and vim.bo.buftype == '' and vim.fn.expand('%') ~= '' then
+      vim.cmd 'silent! write'
+    end
+  end,
+})
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
