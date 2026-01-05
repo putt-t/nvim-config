@@ -4,18 +4,38 @@ Space+sg: search by grep (search text in files)
 Space+sh: search help docs
 Space+sk: search keymaps
 Space+sd: search diagnostics (errors/warnings)
-gd: go to definition
-gr: go to references
-gI: go to implementation
+Space+sn: search neovim config files
+Space+sr: resume last search
+Space+s.: search recent files
+Space+/: fuzzy search in current buffer
+Space+s/: search in open files
+
+# LSP Navigation
+grd: go to definition
+grr: go to references
+gri: go to implementation
+grD: go to declaration (e.g., C header)
+grt: go to type definition
+gO: open document symbols (list all symbols in file)
+gW: open workspace symbols (search symbols in project)
+Ctrl+t: jump back from definition
 Ctrl+o: jump back to previous location
 Ctrl+i: jump forward
-Code Actions and LSP
+
+# Code Actions and LSP
 K: show hover documentation
-Space+rn: rename symbol
-Space+ca: code actions (quick fixes)
+grn: rename symbol
+gra: code actions (quick fixes)
+Space+f: format buffer
+Space+th: toggle inlay hints
+Space+q: open diagnostic quickfix list
 [d: go to previous diagnostic
 ]d: go to next diagnostic
 Space+e: show diagnostic in floating window
+
+# Git Commands
+:Telescope git_status: see all changed files
+:Telescope git_commits: see commit history
 # Basic Motions
 hjkl: left, down, up, right
 w: jump forward by word
