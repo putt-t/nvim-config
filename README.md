@@ -1,3 +1,1 @@
-# kickstart.nvim
-
-nvim config
+# My nvim config 
