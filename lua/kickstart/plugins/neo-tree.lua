@@ -14,6 +14,22 @@ return {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
+    default_component_configs = {
+      git_status = {
+        symbols = {
+          -- VS Code / Cursor style indicators
+          added     = "A",
+          modified  = "M",
+          deleted   = "D",
+          renamed   = "R",
+          untracked = "U",
+          ignored   = "",
+          unstaged  = "M",
+          staged    = "A",
+          conflict  = "C",
+        }
+      },
+    },
     filesystem = {
       window = {
         mappings = {

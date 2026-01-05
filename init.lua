@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -925,18 +925,30 @@ require('lazy').setup({
     --   -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
     --   vim.cmd.colorscheme 'tokyonight-night'
     -- end,
-    'ellisonleao/gruvbox.nvim',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
     config = function()
-      require('gruvbox').setup {
-        italic = {
-          comments = false,
-        },
-        contrast = 'hard', -- can be "hard", "soft" or empty string for default
+      require('catppuccin').setup {
+        flavour = 'mocha',
+        no_italic = true,
       }
-      vim.cmd.colorscheme 'gruvbox'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
+  -- {
+  --   'ellisonleao/gruvbox.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     require('gruvbox').setup {
+  --       italic = {
+  --         comments = false,
+  --       },
+  --       contrast = 'hard', -- can be "hard", "soft" or empty string for default
+  --     }
+  --     vim.cmd.colorscheme 'gruvbox'
+  --   end,
+  -- },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -1025,6 +1037,15 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+
+  { -- Markdown preview and rendering
+    'MeanderingProgrammer/render-markdown.nvim',
+    opts = {
+      enabled = true,
+      render_modes = { 'n', 'c', 't' },
+    },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
