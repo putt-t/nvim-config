@@ -84,6 +84,13 @@ Ctrl+w q: close current window
 Ctrl+Space: trigger completion menu (while in insert mode)
 Ctrl+n: next completion
 Ctrl+p: previous completion
+# Spell Checking (for markdown files)
+]s: jump to next misspelled word
+[s: jump to previous misspelled word
+z=: show spelling suggestions for word under cursor
+zg: add word to dictionary (mark as good)
+zw: mark word as wrong/misspelled
+zug: undo add to dictionary
 # Other Useful Commands
 gcc: comment current line
 /search_term: search forward
