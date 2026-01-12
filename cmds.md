@@ -100,3 +100,16 @@ N: previous search result
 *: search for word under cursor
 .: repeat last command
 %: jump to matching bracket
+
+# Surround (nvim-surround)
+ysiw]: surround word with [brackets]
+ysiw): surround word with (parens) - no spaces
+ysiw(: surround word with ( parens ) - with spaces
+ysiw": surround word with "quotes"
+ysa)]: surround around () with [] - includes delimiters
+ysi)]: surround inner () contents with []
+ds]: delete surrounding brackets
+ds): delete surrounding parens
+ds": delete surrounding quotes
+cs]): change [brackets] to (parens)
+cs"': change "double" to 'single' quotes
